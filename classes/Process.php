@@ -44,7 +44,7 @@
                 </td>
                 <td>
                     <button class="btn btn-warning btn-sm"><i class="fa fa-pen-to-square fa-sm"></i></button>
-                    <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                    <button class="btn btn-danger btn-sm" id="deleteBtn" value="<?php echo $employee['id']; ?>"><i class="fa-solid fa-trash"></i></button>
                 </td>
             </tr>
 
@@ -66,5 +66,14 @@
         global $con;
         $id = $_POST['id'];
         $result = $con->query("UPDATE `employee` SET `emp_status`='1' WHERE id='$id'");
+    }
+
+
+    // Delete Employee
+
+    function destroy(){
+        global $con;
+        $id = $_POST['id'];
+        $result = $con->query("DELETE FROM `employee` WHERE id='$id'");
     }
 ?>

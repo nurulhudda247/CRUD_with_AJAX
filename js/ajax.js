@@ -48,6 +48,21 @@ $(document).ready(function () {
         });
     }
 
+    $(document).on("click", "#deleteBtn", function () {
+        var id = $(this).val();
+        $.ajax({
+            url: "classes/Process.php",
+            type: "POST",
+            data: {
+                id: id,
+                action: "destroy"
+            },
+            success: function (response) {
+                show();
+            }
+        })
+    })
+
     //Active to Inactive
     $(document).on("click", "#activeBtn", function() {
         var id = $(this).val();
