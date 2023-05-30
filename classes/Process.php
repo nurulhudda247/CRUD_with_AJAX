@@ -44,7 +44,7 @@
                 </td>
                 <td>
                     <button class="btn btn-warning btn-sm"><i class="fa fa-pen-to-square fa-sm"></i></button>
-                    <button class="btn btn-danger btn-sm" id="deleteBtn" value="<?php echo $employee['id']; ?>"><i class="fa-solid fa-trash"></i></button>
+                    <button class="btn btn-danger btn-sm" id="deleteBtn" value="<?php echo $employee['id']; ?>"><i class="fa-solid fa-trash" data-bs-toggle="modal" data-bs-target="#deleteModal"></i></button>
                 </td>
             </tr>
 
@@ -70,7 +70,6 @@
 
 
     // Delete Employee
-
     function destroy(){
         global $con;
         $id = $_POST['id'];

@@ -48,7 +48,14 @@ $(document).ready(function () {
         });
     }
 
+    // Delete Employee
     $(document).on("click", "#deleteBtn", function () {
+        var id = $(this).val();
+        $("#yesDelete").val(id);
+    })
+
+    // Delete Employee With Confirmation Modal
+    $(document).on("click", "#yesDelete", function () {
         var id = $(this).val();
         $.ajax({
             url: "classes/Process.php",
@@ -59,6 +66,7 @@ $(document).ready(function () {
             },
             success: function (response) {
                 show();
+                $("#deleteModal").modal("hide");
             }
         })
     })
